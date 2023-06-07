@@ -1,4 +1,13 @@
+def analyze():
+	print("analyze")
+
+	
+def simulate():
+	print("simulate")
+
+
 
 
 if __name__ == '__main__':
-	print("Hello World!")	
+	analyze()
+	simulate()
