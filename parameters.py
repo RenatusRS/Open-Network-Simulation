@@ -10,27 +10,29 @@ class Perforamcnes(Enum):
     SdK = 25 # User disk
     
 	
-class DiscProbability(Enum):
+class ProcessorProbability(Enum):
 	Sd1 = 0.15
 	Sd2 = 0.10
 	Sd3 = 0.05
         
 	SdK = 0.50
         
-	Pass = 0.20
+	Processor = 0.20
         
 		
-class WorkProbabiltiy(Enum):
-    Done = 0.30
+class DiscProbabiltiy(Enum):
+    Processor = 0.30
     Repeat = 0.20
     SdK = 0.50
     
 
 class Variables(Enum):
-	r = [0.25, 0.50, 0.77, 0.99]
-	K = range(2, 6)
+	r = [0.25, 0.50, 0.77, 0.99] # arrival rate
+	K = range(2, 6) # number of user disks
         
 		
 class UserInput(Enum):
-	SimulationTime = 30
+	SimulationTime = 30 # minutes
 	NumberOfSimulations = 100
+	Offset = 0.6
+	printFlag = False

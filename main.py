@@ -1,9 +1,9 @@
+from simulate.simulate import simulate
+
 def analyze():
 	print("analyze")
 
-	
-def simulate():
-	print("simulate")
+
 
 
 
