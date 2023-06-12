@@ -9,15 +9,17 @@ class Spreader(Component):
 		super().__init__(name)
 		
 		self._targets = []
+		self._weights = []
 
 		
 	def addTarget(self, target: Component, weight: int):
-		self._targets.append((target, weight))
+		self._targets.append(target)
+		self._weights.append(weight)
 		
 	def add(self, job):
 		target = random.choices(
-				[target for target, _ in self._targets],
-				[weight for _, weight in self._targets]
+				self._targets,
+				weights=self._weights
 			)[0]
 			
 		ifPrint(f"{job} {self} -> {target}")

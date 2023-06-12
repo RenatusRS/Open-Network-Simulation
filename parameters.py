@@ -33,6 +33,6 @@ class Variables(Enum):
 		
 class UserInput(Enum):
 	SimulationTime = 30 # minutes
-	NumberOfSimulations = 100
+	NumberOfSimulations = 4
 	Offset = 0.6
 	printFlag = False

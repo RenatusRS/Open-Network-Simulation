@@ -1,10 +1,4 @@
 class Job:
-	jobs = []
-	
-	@staticmethod
-	def reset():
-		Job.jobs = []
-    
 	def __init__(self, time, name: str):
 		self.name = name
 		self.start_time = time
@@ -13,8 +7,6 @@ class Job:
 		
 		self.processed_time = 0
 		self.processed_count = 0
-		
-		self.jobs.append(self)
 	
 	def set_time(self, time):
 		self.current_time = time

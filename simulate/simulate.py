@@ -1,30 +1,57 @@
+from multiprocessing import Pool, Value
 from simulate.Job import Job
 from simulate.components.Active import Active
 from simulate.components.Component import Component
 from parameters import UserInput, Variables
+from simulate.components.Counter import Counter
 from simulate.generate import generate_scheme, generate_jobs
 
 
-
-def simulate():
-	for K in Variables.K.value:
-		for r in Variables.r.value:
-			for simulation_number in range(UserInput.NumberOfSimulations.value):
-				print(f"Simulation [r = {r}, K = {K}] {simulation_number + 1} / {UserInput.NumberOfSimulations.value}")
-				
-				simulation(r, K, 5)
-
-
-def simulation(r, K, time = UserInput.SimulationTime.value):
-	time *= 60 * 1000
+def init_globals(counter):
+    global cnt
+    cnt = counter
 	
-	Active.reset()
-	Job.reset()
+def simulate():
+	parameters = [(r, K, i + 1, 1) for r in Variables.r.value for K in Variables.K.value for i in range(UserInput.NumberOfSimulations.value)]
+	
+	cnt = Value('i', len(parameters))
+	
+	with Pool(initializer=init_globals, initargs=(cnt,)) as pool:
+		results = pool.starmap(simulation, parameters)
+	
+	averaged_results = {
+		K : {
+			r : {
+				"total_runtime": sum([result["total_runtime"] for result in results if result["K"] == K and result["r"] == r]) / UserInput.NumberOfSimulations.value,
+				"utilization_average": sum([result["utilization_average"] for result in results if result["K"] == K and result["r"] == r]) / UserInput.NumberOfSimulations.value,
+				"job_time_average": sum([result["job_time_average"] for result in results if result["K"] == K and result["r"] == r]) / UserInput.NumberOfSimulations.value
+				
+			} for r in Variables.r.value
+		} for K in Variables.K.value
+	}
+	
+	print(averaged_results)
+	
+	return averaged_results
 
-	entry_point = generate_scheme(K)
+
+def simulation(r, K, i, time = UserInput.SimulationTime.value):
+	time *= 60 * 1000
+
+	scheme = generate_scheme(K)
 	jobs = generate_jobs(time, 1.0 / r)
 	
-	for job in jobs:
-		entry_point.add(job)
-		
-	Active.simulate()
+	print(f"r = {r}, K = {K}, i = {i} | START")
+	scheme.simulate(jobs)
+	
+	with cnt.get_lock():
+		cnt.value -= 1
+        
+		print(f"r = {r}, K = {K}, i = {i} | DONE ({cnt.value} left)")
+	
+	return scheme.get_results(r, K)
+
+#			"total_runtime": total_runtime,
+#			"utilization": utilization,
+#			"utilization_average": utilization_average,
+#			"job_time_average": job_time_average

@@ -3,6 +3,7 @@ from parameters import DiscProbabiltiy, Perforamcnes, ProcessorProbability
 from simulate.Job import Job
 from simulate.components.Active import Active
 from simulate.components.Component import Component
+from simulate.components.Schema import Schema
 from simulate.components.Spreader import Spreader
 
 
@@ -24,7 +25,7 @@ def generate_jobs(total_time, average_time):
 	
 	return jobs
 
-def generate_scheme(number_of_disks) -> Component:
+def generate_scheme(number_of_disks) -> Schema:
 	entry_point = Spreader("Entry Point")
 	
 	processor = Active("Processor", Perforamcnes.Sp.value)
@@ -73,4 +74,24 @@ def generate_scheme(number_of_disks) -> Component:
 	
 	system_disk_3.setTarget(system_disk_3_spreader)
 	
-	return entry_point
+	
+	scheme = Schema()
+	
+	scheme.add(entry_point)
+	scheme.add(processor)
+	scheme.add(system_disk_1)
+	scheme.add(system_disk_2)
+	scheme.add(system_disk_3)
+	scheme.add(user_disks_spreader)
+	scheme.add(processor_spreader)
+	scheme.add(system_disk_spreader)
+	scheme.add(system_disk_1_spreader)
+	scheme.add(system_disk_2_spreader)
+	scheme.add(system_disk_3_spreader)
+	
+	for user_disk in user_disks:
+		scheme.add(user_disk)
+		
+	scheme.set_entry_point(entry_point)
+	
+	return scheme

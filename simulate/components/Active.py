@@ -7,28 +7,15 @@ from util import ifPrint
 
 
 class Active(Component):
-	components = []
-	
-	@staticmethod
-	def reset():
-		Active.components = []
-	
-	@staticmethod
-	def simulate():
-		while True:
-			active_components = [component for component in Active.components if component.queue]
-			if not active_components:
-				break
-			
-			component = min(active_components, key=lambda component: component.get_next_time())
-			component.next()
-			
 	def next(self):
 		job = self.queue.pop(0)
 		job.current_time = max(job.current_time, self.cooldown)
 		self.process(job)
 		
 	def get_next_time(self):
+		if len(self.queue) == 0:
+			return float("inf")
+		
 		return max(self.queue[0].current_time, self.cooldown)
 	
 	def __init__(self, name: str, service_time: int):
