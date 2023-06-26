@@ -1,3 +1,4 @@
+from collections import deque
 import random
 
 from simulate.Job import Job
@@ -8,7 +9,7 @@ from util import ifPrint
 
 class Active(Component):
 	def next(self):
-		job = self.queue.pop(0)
+		job = self.queue.popleft()
 		job.current_time = max(job.current_time, self.cooldown)
 		self.process(job)
 		
@@ -21,7 +22,7 @@ class Active(Component):
 	def __init__(self, name: str, service_time: int):
 		super().__init__(name)
 		
-		self.queue = []
+		self.queue = deque()
 		self._service_time = service_time
 		self._target = None
 		self.cooldown = 0

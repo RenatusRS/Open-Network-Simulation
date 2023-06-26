@@ -26,11 +26,7 @@ def generate_jobs(total_time, average_time):
 	return jobs
 
 def generate_scheme(number_of_disks) -> Schema:
-	entry_point = Spreader("Entry Point")
-	
 	processor = Active("Processor", Perforamcnes.Sp.value)
-	
-	entry_point.addTarget(processor, 1.0)
 	
 	system_disk_1 = Active("System Disk 1", Perforamcnes.Sd1.value)
 	system_disk_2 = Active("System Disk 2", Perforamcnes.Sd2.value)
@@ -77,7 +73,6 @@ def generate_scheme(number_of_disks) -> Schema:
 	
 	scheme = Schema()
 	
-	scheme.add(entry_point)
 	scheme.add(processor)
 	scheme.add(system_disk_1)
 	scheme.add(system_disk_2)
@@ -92,6 +87,6 @@ def generate_scheme(number_of_disks) -> Schema:
 	for user_disk in user_disks:
 		scheme.add(user_disk)
 		
-	scheme.set_entry_point(entry_point)
+	scheme.set_entry_point(processor)
 	
 	return scheme

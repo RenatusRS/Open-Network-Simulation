@@ -1,4 +1,6 @@
+import json
 from multiprocessing import Pool, Value
+import time
 from simulate.Job import Job
 from simulate.components.Active import Active
 from simulate.components.Component import Component
@@ -12,12 +14,18 @@ def init_globals(counter):
     cnt = counter
 	
 def simulate():
-	parameters = [(r, K, i + 1, 1) for r in Variables.r.value for K in Variables.K.value for i in range(UserInput.NumberOfSimulations.value)]
+	parameters = [(r, K, i + 1) for r in Variables.r.value for K in Variables.K.value for i in range(UserInput.NumberOfSimulations.value)]
 	
 	cnt = Value('i', len(parameters))
 	
+	start_time = time.time()
+	
 	with Pool(initializer=init_globals, initargs=(cnt,)) as pool:
 		results = pool.starmap(simulation, parameters)
+		
+	end_time = time.time()
+	
+	print("Elapsed time: {:.2f} seconds".format(end_time - start_time))
 	
 	averaged_results = {
 		K : {
@@ -30,7 +38,7 @@ def simulate():
 		} for K in Variables.K.value
 	}
 	
-	print(averaged_results)
+	print(json.dumps(averaged_results, indent=4))
 	
 	return averaged_results
 
@@ -40,6 +48,7 @@ def simulation(r, K, i, time = UserInput.SimulationTime.value):
 
 	scheme = generate_scheme(K)
 	jobs = generate_jobs(time, 1.0 / r)
+	print(len(jobs))
 	
 	print(f"r = {r}, K = {K}, i = {i} | START")
 	scheme.simulate(jobs)

@@ -27,12 +27,12 @@ class DiscProbabiltiy(Enum):
     
 
 class Variables(Enum):
-	r = [0.25, 0.50, 0.77, 0.99] # arrival rate
-	K = range(2, 6) # number of user disks
+	r = [0.25] # arrival rate
+	K = range(2, 3) # number of user disks
         
 		
 class UserInput(Enum):
 	SimulationTime = 30 # minutes
-	NumberOfSimulations = 4
+	NumberOfSimulations = 1
 	Offset = 0.6
 	printFlag = False

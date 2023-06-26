@@ -8,7 +8,8 @@ class Schema:
 		self.active_components = []
 		self.passive_components = []
 		
-		self.entry_point: Component = None
+		self._entry_point: Active = Active("Entry Point", 0)
+		self.add(self._entry_point)
 		
 	def add(self, component):
 		if isinstance(component, Active):
@@ -17,13 +18,13 @@ class Schema:
 			self.passive_components.append(component)
 
 	def set_entry_point(self, component):
-		self.entry_point = component
+		self._entry_point.setTarget(component)
 		
 	def simulate(self, jobs):
 		self.jobs = jobs
 		
 		for job in jobs:
-			self.entry_point.add(job)
+			self._entry_point.add(job)
 		
 		while True:
 			component: Active = min(self.active_components, key=lambda component: component.get_next_time())
@@ -44,6 +45,7 @@ class Schema:
 		utilization_average = np.mean([resource.processing_time / total_runtime for resource in resources])
 	
 		job_time_average = np.mean([job.current_time - job.start_time for job in self.jobs])
+		
 		
 		return {
 			"total_runtime": total_runtime,
