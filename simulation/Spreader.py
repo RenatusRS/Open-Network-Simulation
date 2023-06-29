@@ -1,8 +1,6 @@
 import random
 
-from simulate.components.Component import Component
-from util import ifPrint
-
+from simulation.Component import Component
 
 class Spreader(Component):
 	def __init__(self, name: str):
@@ -20,14 +18,12 @@ class Spreader(Component):
 		self._spreads[target] = 0
 		
 	def add(self, job):
-		target = random.choices(
+		target: Component = random.choices(
 				self._targets,
 				weights=self._weights
 			)[0]
 		
 		self._spreads[target] += 1
-			
-		ifPrint(f"{job} {self} -> {target}")
 			
 		target.add(job)
 		

@@ -1,38 +1,39 @@
 from enum import Enum
 
-class Perforamcnes(Enum):
-    Sp  = 6.25 # Processor speed
+class ProcessingSpeed(Enum):
+    Processor   = 6.25
 	
-    Sd1 = 10 # System disk 1
-    Sd2 = 15 # System disk 2
-    Sd3 = 15 # System disk 3
+    SystemDisk1 = 10
+    SystemDisk2 = 15
+    SystemDisk3 = 15
     
-    SdK = 25 # User disk
+    UserDisk    = 25
     
 	
 class ProcessorProbability(Enum):
-	Sd1 = 0.15
-	Sd2 = 0.10
-	Sd3 = 0.05
+	SystemDisk1 = 0.15
+	SystemDisk2 = 0.10
+	SystemDisk3 = 0.05
         
-	SdK = 0.50
+	UserDisk    = 0.50
         
-	Processor = 0.20
+	Processor   = 0.20
         
 		
 class DiscProbabiltiy(Enum):
     Processor = 0.30
-    Repeat = 0.20
-    SdK = 0.50
+    Self = 0.20
+    UserDisk = 0.50
     
 
 class Variables(Enum):
-	r = [0.25] # arrival rate
-	K = range(2, 3) # number of user disks
+	#r = [0.25, 0.50, 0.77, 0.99] # arrival rate modification
+	#K = range(2, 6) # number of user disks
+	r = [0.25, 0.50] # arrival rate modification
+	K = range(2, 6) # number of user disks
         
 		
-class UserInput(Enum):
-	SimulationTime = 30 # minutes
-	NumberOfSimulations = 1
-	Offset = 0.6
-	printFlag = False
+class SimulationParameters(Enum):
+	SimulationTimeMinutes = 30
+	NumberOfSimulations = 5
+	
