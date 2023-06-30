@@ -10,9 +10,9 @@ if __name__ == '__main__':
 	protoci_analiticki(analyze_results)
 	rezultati_analiticki(analyze_results)
 	
-	a_max_values = [analyze_results[K]['a_max'] for K in Variables.K.value]
+	α_values = [analyze_results[K]['α_max'] for K in Variables.K.value]
 	
-	simulate_results = simulate(a_max_values)
+	simulate_results = simulate(α_values)
 	
 	rezultati_simulacija(simulate_results)
 	rezultati_simulacija_usrednjeno(simulate_results)

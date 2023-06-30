@@ -120,6 +120,4 @@ def generate_performance_vector(number_of_disks):
 			] + [ProcessingSpeed.UserDisk.value] * number_of_disks
 		)
 	
-	performance_vector /= 1000 # convert to seconds
-	
 	return performance_vector
