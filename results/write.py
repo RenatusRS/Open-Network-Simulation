@@ -22,8 +22,8 @@ def protoci_analiticki(results: dict):
 	for i in range(len(column_width)):
 		mx = column_width[i]
 		
-		for result in results:
-			mx = max(mx, len(str(results[result]["odnos_protoka"][i]))) if i < len(results[result]["odnos_protoka"]) else mx
+		for k, data in results.items():
+			mx = max(mx, len(str(data["odnos_protoka"][i]))) if i < len(data["odnos_protoka"]) else mx
 		
 		column_width[i] = max(column_width[i], mx)
 	
@@ -67,7 +67,7 @@ def rezultati_analiticki(results: dict):
 			
 			file.write(f"Odnos protoka: {data['odnos_protoka']}\n")
 			file.write(f"Critical resource: {data['critical_resource']}\n")
-			file.write(f"Max a: {data['a_max']}\n")
+			file.write(f"α: {data['α_max']}\n")
 			
 			#file.write(f"Parameters: \n {pprint.PrettyPrinter(depth=10).pformat(data['parameters'])}\n")
 			
