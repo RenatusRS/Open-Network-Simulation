@@ -66,12 +66,10 @@ def rezultati_analiticki(results: dict):
 			data = convert_numpy_to_list(data)
 			
 			file.write(f"Odnos protoka: {data['odnos_protoka']}\n")
-			file.write(f"Critical resource: {data['critical_resource']}\n")
+			file.write(f"Critical Resource: {data['critical_resource']}\n")
 			file.write(f"a: {data['a_max']}\n")
 			
-			#file.write(f"Parameters: \n {pprint.PrettyPrinter(depth=10).pformat(data['parameters'])}\n")
-			
-			pprint.pprint(data['parameters'], stream=file, depth=3)
+			pprint.pprint(data['parameters'], stream=file)
 			
 			file.write("\n")
 			
@@ -83,16 +81,16 @@ def rezultati_simulacija(results: list):
 		for result in results:
 			file.write(f"K = {result['K']}, r = {result['r']}\n")
 			
-			file.write(f"Response time: {result['response_time']}\n")
+			file.write(f"Response Time: {result['response_time']}\n")
 			
 			file.write(f"\nUtilization: \n")
-			pprint.pprint(result['utilization'], stream=file, depth=3)
+			pprint.pprint(result['utilization'], stream=file)
 			
-			file.write(f"\nThrougput: \n")
-			pprint.pprint(result['througput'], stream=file, depth=3)
+			file.write(f"\nThroughput: \n")
+			pprint.pprint(result['throughput'], stream=file)
 			
-			file.write(f"\nAverage jobs in queue: \n")
-			pprint.pprint(result['average_jobs_in_queue'], stream=file, depth=3)
+			file.write(f"\nProcessing Time: \n")
+			pprint.pprint(result['processing_time'], stream=file)
 			
 			file.write("\n")
 			
@@ -130,16 +128,16 @@ def rezultati_simulacija_usrednjeno(results: list):
 			for r in Variables.r.value:
 				file.write(f"K = {K}, r = {r}\n")
 				
-				file.write(f"Response time: {results[K][r]['response_time']}\n")
+				file.write(f"Response Time: {results[K][r]['response_time']}\n")
 				
 				file.write(f"\nUtilization: \n")
-				pprint.pprint(results[K][r]['utilization'], stream=file, depth=3)
+				pprint.pprint(results[K][r]['utilization'], stream=file)
 				
-				file.write(f"\nThrougput: \n")
-				pprint.pprint(results[K][r]['througput'], stream=file, depth=3)
+				file.write(f"\nThroughput: \n")
+				pprint.pprint(results[K][r]['throughput'], stream=file)
 				
-				file.write(f"\nAverage jobs in queue: \n")
-				pprint.pprint(results[K][r]['average_jobs_in_queue'], stream=file, depth=3)
+				file.write(f"\nProcessing Time: \n")
+				pprint.pprint(results[K][r]['processing_time'], stream=file)
 				
 				file.write("\n")
 

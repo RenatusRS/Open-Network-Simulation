@@ -7,17 +7,8 @@ from simulation.Spreader import Spreader
 
 
 def generate_jobs(total_time, throughput):
-	event_times = []
-	time = 0.0
-	
-	average_time = 1 / throughput
-
-	while time < total_time:
-		time_interval = np.random.exponential(scale=average_time)
-		
-		time += time_interval
-		
-		event_times.append(time)  
+	job_num = np.random.poisson(throughput * total_time)
+	event_times = np.cumsum(np.random.exponential(1 / throughput, job_num))
 		
 	jobs = [Job(event, f"Job {ind}") for ind, event in enumerate(event_times)]
 	
@@ -25,13 +16,13 @@ def generate_jobs(total_time, throughput):
 
 
 def generate_scheme(number_of_disks) -> Schema:
-	processor = Active("Processor", ProcessingSpeed.Processor.value)
+	processor     = Active("Processor", ProcessingSpeed.Processor.value)
 	
 	system_disk_1 = Active("System Disk 1", ProcessingSpeed.SystemDisk1.value)
 	system_disk_2 = Active("System Disk 2", ProcessingSpeed.SystemDisk2.value)
 	system_disk_3 = Active("System Disk 3", ProcessingSpeed.SystemDisk3.value)
 	
-	user_disks = [Active(f"User Disk {index + 1}", ProcessingSpeed.UserDisk.value) for index in range(number_of_disks)]
+	user_disks   = [Active(f"User Disk {index + 1}", ProcessingSpeed.UserDisk.value) for index in range(number_of_disks)]
 	
 	user_disks_spreader = Spreader("User Disk Spreader")
 	
@@ -68,7 +59,6 @@ def generate_scheme(number_of_disks) -> Schema:
 	system_disk_3_spreader.addTarget(system_disk_3, DiscProbabiltiy.Self.value)
 	
 	system_disk_3.setTarget(system_disk_3_spreader)
-	
 	
 	scheme = Schema()
 	

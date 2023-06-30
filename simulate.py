@@ -6,9 +6,7 @@ from parameters import SimulationParameters, Variables
 
 
 def simulate(a_values):
-	print("Simulation started")
-	
-	print(a_values)
+	print("\nSimulation started\n")
 	
 	parameters = [(r, a_values[K - min(Variables.K.value)], K) for r in Variables.r.value for K in Variables.K.value] * SimulationParameters.NumberOfSimulations.value
 	
@@ -21,7 +19,7 @@ def simulate(a_values):
 		
 	end_time = time.time()
 	
-	print("Simulation completed - Elapsed time: {:.2f} seconds".format(end_time - start_time))
+	print("\nSimulation completed - Elapsed time: {:.2f} seconds\n".format(end_time - start_time))
 	
 	return results
 

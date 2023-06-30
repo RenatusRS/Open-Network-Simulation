@@ -27,13 +27,11 @@ class DiscProbabiltiy(Enum):
     
 
 class Variables(Enum):
-	#r = [0.25, 0.50, 0.77, 0.99] # arrival rate modification
-	#K = range(2, 6) # number of user disks
 	r = [0.25, 0.50, 0.77, 0.99] # arrival rate modification
-	K = range(2, 5) # number of user disks
+	K = range(2, 6) # number of user disks
         
 		
 class SimulationParameters(Enum):
 	SimulationTimeSeconds = 30 * 60 # 30 minutes
-	NumberOfSimulations = 2
+	NumberOfSimulations = 3
 	

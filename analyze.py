@@ -3,7 +3,6 @@ import numpy as np
 from generate import generate_performance_vector, generate_probability_matrix
 from parameters import Variables
 
-from parameters import Variables
 
 def analyze():
 	print("Analysis started")
@@ -29,8 +28,6 @@ def analyze():
 	return results
 	
 
-
-
 def odredi_protok(number_of_disks: int):
 	probability_matrix = generate_probability_matrix(number_of_disks)
 	
@@ -49,6 +46,7 @@ def odredi_protok(number_of_disks: int):
 	
 	return what
 
+
 def odredi_granicnu_vrednost(number_of_disks: int, odnos_protoka: np.ndarray):
 	performances = generate_performance_vector(number_of_disks)
 	
@@ -62,33 +60,27 @@ def odredi_granicnu_vrednost(number_of_disks: int, odnos_protoka: np.ndarray):
 	
 	return max_a, critical_resource
 	
-	
-	
-	
-	
 
 def odredi_parametre_jackson(number_of_disks: int, odnosi_protoka: np.ndarray, a_max: float):
 	results = dict()
 	
 	for r in Variables.r.value:
-		odnosi_protoka_r = copy.deepcopy(odnosi_protoka)
+		X = copy.deepcopy(odnosi_protoka)
 		
-		odnosi_protoka_r *= a_max * r
+		X *= a_max * r
 		
 		performances = generate_performance_vector(number_of_disks)
 		
-		U = odnosi_protoka_r * performances
+		U = X * performances
 		
-		U_inv = np.ones([odnosi_protoka.size]) - U
+		J = U / (1 - U)
 		
-		J = U / U_inv
-		T = J / odnosi_protoka_r
+		T = J / X
 		
 		T_OVERALL = np.sum(odnosi_protoka * T)
 		
 		results[r] = {
-			"lambda": a_max * r,
-			"X": odnosi_protoka_r,
+			"X": X,
 			"U": U,
 			"J": J,
 			"T": T_OVERALL
