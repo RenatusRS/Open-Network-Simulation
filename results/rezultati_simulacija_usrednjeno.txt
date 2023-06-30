@@ -1,0 +1,504 @@
+K = 2, r = 0.25
+Response Time: 0.05158532556027237
+
+Utilization: 
+{'Processor': 0.1817707917164588,
+ 'System Disk 1': 0.054554308017148945,
+ 'System Disk 2': 0.054423172727608826,
+ 'System Disk 3': 0.0272715271383885,
+ 'User Disk 1': 0.2498415254187081,
+ 'User Disk 2': 0.24999271724139244}
+
+Throughput: 
+{'Processor': 29.079570243463717,
+ 'System Disk 1': 5.452333356755782,
+ 'System Disk 2': 3.6247182957169493,
+ 'System Disk 3': 1.8188056909112837,
+ 'User Disk 1': 9.993650051125531,
+ 'User Disk 2': 10.005560186065559}
+
+Processing Time: 
+{'Processor': 0.22220372101505803,
+ 'System Disk 1': 0.05768724290708578,
+ 'System Disk 2': 0.05753050725348232,
+ 'System Disk 3': 0.028017075331890393,
+ 'User Disk 1': 0.332991552569091,
+ 'User Disk 2': 0.3332429601168186}
+
+K = 2, r = 0.5
+Response Time: 0.07178138138658735
+
+Utilization: 
+{'Processor': 0.36391712097273965,
+ 'System Disk 1': 0.10914934990003779,
+ 'System Disk 2': 0.10920354058217636,
+ 'System Disk 3': 0.054620392128536144,
+ 'User Disk 1': 0.4997024036686433,
+ 'User Disk 2': 0.5002598417607015}
+
+Throughput: 
+{'Processor': 58.21350167863379,
+ 'System Disk 1': 10.918832573047908,
+ 'System Disk 2': 7.280461022659536,
+ 'System Disk 3': 3.6379548564230944,
+ 'User Disk 1': 20.011763656046245,
+ 'User Disk 2': 20.00200454558125}
+
+Processing Time: 
+{'Processor': 0.571802158497696,
+ 'System Disk 1': 0.12248697841976668,
+ 'System Disk 2': 0.12250494347775867,
+ 'System Disk 3': 0.05777090023905049,
+ 'User Disk 1': 0.9983539036465333,
+ 'User Disk 2': 0.999363544255353}
+
+K = 2, r = 0.77
+Response Time: 0.1375874425050744
+
+Utilization: 
+{'Processor': 0.5596682298393875,
+ 'System Disk 1': 0.16788230951820712,
+ 'System Disk 2': 0.1677782809224971,
+ 'System Disk 3': 0.08372298333327505,
+ 'User Disk 1': 0.7698641874290267,
+ 'User Disk 2': 0.770447902328638}
+
+Throughput: 
+{'Processor': 89.55152983148102,
+ 'System Disk 1': 16.796563669009473,
+ 'System Disk 2': 11.184864346763284,
+ 'System Disk 3': 5.582423732409547,
+ 'User Disk 1': 30.790724906921966,
+ 'User Disk 2': 30.785612252104766}
+
+Processing Time: 
+{'Processor': 1.2715147524346895,
+ 'System Disk 1': 0.20173475959982962,
+ 'System Disk 2': 0.20156251305837444,
+ 'System Disk 3': 0.09139431599446576,
+ 'User Disk 1': 3.3397652117980257,
+ 'User Disk 2': 3.3665267452740024}
+
+K = 2, r = 0.99
+Response Time: 2.1686747177594143
+
+Utilization: 
+{'Processor': 0.7186224078187472,
+ 'System Disk 1': 0.21564441439775636,
+ 'System Disk 2': 0.21563620770570333,
+ 'System Disk 3': 0.10761352839753417,
+ 'User Disk 1': 0.9882937143137334,
+ 'User Disk 2': 0.9877906061932025}
+
+Throughput: 
+{'Processor': 114.99689220304931,
+ 'System Disk 1': 21.563075311356506,
+ 'System Disk 2': 14.372569719640415,
+ 'System Disk 3': 7.179733805705217,
+ 'User Disk 1': 39.53935096750213,
+ 'User Disk 2': 39.51385766798271}
+
+Processing Time: 
+{'Processor': 2.564738674836639,
+ 'System Disk 1': 0.27472721302104064,
+ 'System Disk 2': 0.2750203089528057,
+ 'System Disk 3': 0.12052549649810271,
+ 'User Disk 1': 86.96684996291296,
+ 'User Disk 2': 81.28790139303905}
+
+K = 3, r = 0.25
+Response Time: 0.05187837920943084
+
+Utilization: 
+{'Processor': 0.2503261869092399,
+ 'System Disk 1': 0.07505503922206126,
+ 'System Disk 2': 0.07501722449596666,
+ 'System Disk 3': 0.03742880160652406,
+ 'User Disk 1': 0.22907302934364185,
+ 'User Disk 2': 0.22954428738118504,
+ 'User Disk 3': 0.22883909343077177}
+
+Throughput: 
+{'Processor': 40.01967270776844,
+ 'System Disk 1': 7.504327657636204,
+ 'System Disk 2': 4.997849266573282,
+ 'System Disk 3': 2.4944532482901822,
+ 'User Disk 1': 9.165472215720683,
+ 'User Disk 2': 9.172576452032999,
+ 'User Disk 3': 9.163578389475104}
+
+Processing Time: 
+{'Processor': 0.33384781539237207,
+ 'System Disk 1': 0.08117290454563143,
+ 'System Disk 2': 0.08115294953200168,
+ 'System Disk 3': 0.03889649541943836,
+ 'User Disk 1': 0.2970280361549269,
+ 'User Disk 2': 0.29766366269969924,
+ 'User Disk 3': 0.29698534507002067}
+
+K = 3, r = 0.5
+Response Time: 0.07223735674964687
+
+Utilization: 
+{'Processor': 0.49987897146626037,
+ 'System Disk 1': 0.15000667062195333,
+ 'System Disk 2': 0.14989143181863887,
+ 'System Disk 3': 0.07501581654117306,
+ 'User Disk 1': 0.45806836126068295,
+ 'User Disk 2': 0.45798428318359796,
+ 'User Disk 3': 0.45835486493460037}
+
+Throughput: 
+{'Processor': 80.00200446821054,
+ 'System Disk 1': 15.006552330022924,
+ 'System Disk 2': 9.992149292474188,
+ 'System Disk 3': 5.005117198198071,
+ 'User Disk 1': 18.342357402438356,
+ 'User Disk 2': 18.3210138323444,
+ 'User Disk 3': 18.334257554268834}
+
+Processing Time: 
+{'Processor': 0.9994025809858339,
+ 'System Disk 1': 0.17649217596303365,
+ 'System Disk 2': 0.1760896846949584,
+ 'System Disk 3': 0.08116124257540218,
+ 'User Disk 1': 0.8464454878795447,
+ 'User Disk 2': 0.8455159613290278,
+ 'User Disk 3': 0.8478030456001897}
+
+K = 3, r = 0.77
+Response Time: 0.13301565372685636
+
+Utilization: 
+{'Processor': 0.7693466846637151,
+ 'System Disk 1': 0.2309226583185866,
+ 'System Disk 2': 0.230537294845644,
+ 'System Disk 3': 0.11516789241580928,
+ 'User Disk 1': 0.7060060079828168,
+ 'User Disk 2': 0.7053430957463448,
+ 'User Disk 3': 0.7054823944938099}
+
+Throughput: 
+{'Processor': 123.11887831252078,
+ 'System Disk 1': 23.093666292888738,
+ 'System Disk 2': 15.379737901312055,
+ 'System Disk 3': 7.683881912561341,
+ 'User Disk 1': 28.221146569935595,
+ 'User Disk 2': 28.20697589665723,
+ 'User Disk 3': 28.219701524020497}
+
+Processing Time: 
+{'Processor': 3.3351614716401663,
+ 'System Disk 1': 0.30022758065976063,
+ 'System Disk 2': 0.2995743270165221,
+ 'System Disk 3': 0.1301562007581096,
+ 'User Disk 1': 2.40442844548446,
+ 'User Disk 2': 2.393807012309483,
+ 'User Disk 3': 2.3963115472902246}
+
+K = 3, r = 0.99
+Response Time: 1.1129482504022585
+
+Utilization: 
+{'Processor': 0.989018611019495,
+ 'System Disk 1': 0.2967038655309015,
+ 'System Disk 2': 0.29652510075205485,
+ 'System Disk 3': 0.1485037476691191,
+ 'User Disk 1': 0.9067023307516674,
+ 'User Disk 2': 0.9073373156551747,
+ 'User Disk 3': 0.9058089935221196}
+
+Throughput: 
+{'Processor': 158.2837832502934,
+ 'System Disk 1': 29.651747206835747,
+ 'System Disk 2': 19.770498602449287,
+ 'System Disk 3': 9.888627363038653,
+ 'User Disk 1': 36.28083690792633,
+ 'User Disk 2': 36.28491410950123,
+ 'User Disk 3': 36.2616177467693}
+
+Processing Time: 
+{'Processor': 90.88851246189047,
+ 'System Disk 1': 0.42228022448095365,
+ 'System Disk 2': 0.4224058561606793,
+ 'System Disk 3': 0.1743213773805237,
+ 'User Disk 1': 9.77364050292558,
+ 'User Disk 2': 9.83651990967894,
+ 'User Disk 3': 9.640227398353664}
+
+K = 4, r = 0.25
+Response Time: 0.04962223642043288
+
+Utilization: 
+{'Processor': 0.2501540411597491,
+ 'System Disk 1': 0.07514746220583017,
+ 'System Disk 2': 0.07505596235281926,
+ 'System Disk 3': 0.03755888268699997,
+ 'User Disk 1': 0.17197195201498366,
+ 'User Disk 2': 0.17186501275228916,
+ 'User Disk 3': 0.17167811647377348,
+ 'User Disk 4': 0.17194062248265105}
+
+Throughput: 
+{'Processor': 40.02067212545586,
+ 'System Disk 1': 7.503238918966989,
+ 'System Disk 2': 5.0027205765877065,
+ 'System Disk 3': 2.5025279014093464,
+ 'User Disk 1': 6.874928361758562,
+ 'User Disk 2': 6.8757286271884,
+ 'User Disk 3': 6.879085621306944,
+ 'User Disk 4': 6.882299033410988}
+
+Processing Time: 
+{'Processor': 0.3336328532868662,
+ 'System Disk 1': 0.08120036101191569,
+ 'System Disk 2': 0.0811962228208707,
+ 'System Disk 3': 0.03899628950324265,
+ 'User Disk 1': 0.20761581869328796,
+ 'User Disk 2': 0.2075497827037651,
+ 'User Disk 3': 0.20740834418005416,
+ 'User Disk 4': 0.20761460718409894}
+
+K = 4, r = 0.5
+Response Time: 0.06415951937717038
+
+Utilization: 
+{'Processor': 0.499878210843157,
+ 'System Disk 1': 0.14992368226790728,
+ 'System Disk 2': 0.15039271994942324,
+ 'System Disk 3': 0.07500193638199742,
+ 'User Disk 1': 0.3441049899908613,
+ 'User Disk 2': 0.3437329286167776,
+ 'User Disk 3': 0.3434207973379408,
+ 'User Disk 4': 0.34399200825588605}
+
+Throughput: 
+{'Processor': 79.99384314191859,
+ 'System Disk 1': 14.993280963730031,
+ 'System Disk 2': 10.016883682533162,
+ 'System Disk 3': 4.998623481325542,
+ 'User Disk 1': 13.757653964459427,
+ 'User Disk 2': 13.75304892879441,
+ 'User Disk 3': 13.738767018540482,
+ 'User Disk 4': 13.74750447034379}
+
+Processing Time: 
+{'Processor': 0.999809112284965,
+ 'System Disk 1': 0.1763348646152376,
+ 'System Disk 2': 0.17693351332782317,
+ 'System Disk 3': 0.08106478872094575,
+ 'User Disk 1': 0.5248596607112643,
+ 'User Disk 2': 0.5226423333349793,
+ 'User Disk 3': 0.5225168163013865,
+ 'User Disk 4': 0.5244310398655565}
+
+K = 4, r = 0.77
+Response Time: 0.10119268533240393
+
+Utilization: 
+{'Processor': 0.7694766450166111,
+ 'System Disk 1': 0.23089962458334715,
+ 'System Disk 2': 0.23097822678630656,
+ 'System Disk 3': 0.11578556599523596,
+ 'User Disk 1': 0.5285583281869869,
+ 'User Disk 2': 0.5303840562471099,
+ 'User Disk 3': 0.5295536625528849,
+ 'User Disk 4': 0.529026637023192}
+
+Throughput: 
+{'Processor': 123.14210429770199,
+ 'System Disk 1': 23.062189254955896,
+ 'System Disk 2': 15.393642663210546,
+ 'System Disk 3': 7.715334491403715,
+ 'User Disk 1': 21.152472199109717,
+ 'User Disk 2': 21.191082223718272,
+ 'User Disk 3': 21.167683255229846,
+ 'User Disk 4': 21.156724059944352}
+
+Processing Time: 
+{'Processor': 3.3387755778899155,
+ 'System Disk 1': 0.3003439734412068,
+ 'System Disk 2': 0.30043673754876116,
+ 'System Disk 3': 0.1309443451354607,
+ 'User Disk 1': 1.1203591156043826,
+ 'User Disk 2': 1.127901816953285,
+ 'User Disk 3': 1.1241703525019593,
+ 'User Disk 4': 1.1249743560828018}
+
+K = 4, r = 0.99
+Response Time: 1.0373673896727946
+
+Utilization: 
+{'Processor': 0.9896854010107374,
+ 'System Disk 1': 0.29667978983797544,
+ 'System Disk 2': 0.296398333053184,
+ 'System Disk 3': 0.1486421175566045,
+ 'User Disk 1': 0.6799435643169269,
+ 'User Disk 2': 0.6803814297734051,
+ 'User Disk 3': 0.6810020549178258,
+ 'User Disk 4': 0.6807153367293952}
+
+Throughput: 
+{'Processor': 158.3462189931801,
+ 'System Disk 1': 29.67770403037032,
+ 'System Disk 2': 19.758716684457085,
+ 'System Disk 3': 9.910819500108003,
+ 'User Disk 1': 27.201810921454737,
+ 'User Disk 2': 27.21953218784953,
+ 'User Disk 3': 27.226082564844372,
+ 'User Disk 4': 27.210195149309087}
+
+Processing Time: 
+{'Processor': 103.42565018791949,
+ 'System Disk 1': 0.42199224830463,
+ 'System Disk 2': 0.4213567883167834,
+ 'System Disk 3': 0.17460278578008626,
+ 'User Disk 1': 2.1190853218478045,
+ 'User Disk 2': 2.1290597881161837,
+ 'User Disk 3': 2.140049872526842,
+ 'User Disk 4': 2.133033582484568}
+
+K = 5, r = 0.25
+Response Time: 0.04843425178051568
+
+Utilization: 
+{'Processor': 0.2500521724318922,
+ 'System Disk 1': 0.07494788251872105,
+ 'System Disk 2': 0.074993298666205,
+ 'System Disk 3': 0.03740562340641879,
+ 'User Disk 1': 0.1374435934197584,
+ 'User Disk 2': 0.13737699529167144,
+ 'User Disk 3': 0.13770743172451427,
+ 'User Disk 4': 0.13742800161813024,
+ 'User Disk 5': 0.1377875760142905}
+
+Throughput: 
+{'Processor': 40.00679217017542,
+ 'System Disk 1': 7.495257182284663,
+ 'System Disk 2': 4.999272360231412,
+ 'System Disk 3': 2.498542442173743,
+ 'User Disk 1': 5.498464054014402,
+ 'User Disk 2': 5.496678916333249,
+ 'User Disk 3': 5.511744637379004,
+ 'User Disk 4': 5.4969594023054755,
+ 'User Disk 5': 5.498858779515967}
+
+Processing Time: 
+{'Processor': 0.33355154882149735,
+ 'System Disk 1': 0.08102768940079492,
+ 'System Disk 2': 0.08099289962962568,
+ 'System Disk 3': 0.03883372411357247,
+ 'User Disk 1': 0.15945292338820263,
+ 'User Disk 2': 0.1594058220008002,
+ 'User Disk 3': 0.15958932640028115,
+ 'User Disk 4': 0.15923950937163306,
+ 'User Disk 5': 0.15998594207107858}
+
+K = 5, r = 0.5
+Response Time: 0.06054203854386
+
+Utilization: 
+{'Processor': 0.49994695532819194,
+ 'System Disk 1': 0.14976388161964188,
+ 'System Disk 2': 0.15006095880860387,
+ 'System Disk 3': 0.07517699533000345,
+ 'User Disk 1': 0.275029638102143,
+ 'User Disk 2': 0.27540029573302904,
+ 'User Disk 3': 0.2753027083952961,
+ 'User Disk 4': 0.2750347205312345,
+ 'User Disk 5': 0.2745985793987424}
+
+Throughput: 
+{'Processor': 79.998977810604,
+ 'System Disk 1': 14.986870370551062,
+ 'System Disk 2': 9.995841899097254,
+ 'System Disk 3': 5.000833727316491,
+ 'User Disk 1': 10.995880828071034,
+ 'User Disk 2': 11.010281591841414,
+ 'User Disk 3': 11.004821266544532,
+ 'User Disk 4': 10.996660960539666,
+ 'User Disk 5': 10.989940538930869}
+
+Processing Time: 
+{'Processor': 0.9994542381790725,
+ 'System Disk 1': 0.1760114040017206,
+ 'System Disk 2': 0.1764821399477942,
+ 'System Disk 3': 0.08124405514968025,
+ 'User Disk 1': 0.3794911427172316,
+ 'User Disk 2': 0.38000237920360525,
+ 'User Disk 3': 0.37937184430942095,
+ 'User Disk 4': 0.37890603427577796,
+ 'User Disk 5': 0.37871472580103877}
+
+K = 5, r = 0.77
+Response Time: 0.09155119713281726
+
+Utilization: 
+{'Processor': 0.7699861960512713,
+ 'System Disk 1': 0.23089081707388984,
+ 'System Disk 2': 0.2309569901164278,
+ 'System Disk 3': 0.11566071125270096,
+ 'User Disk 1': 0.42277626648179156,
+ 'User Disk 2': 0.42366118494358135,
+ 'User Disk 3': 0.4229171627879436,
+ 'User Disk 4': 0.4237193316836174,
+ 'User Disk 5': 0.423808779842487}
+
+Throughput: 
+{'Processor': 123.19487391951009,
+ 'System Disk 1': 23.08870381862367,
+ 'System Disk 2': 15.401577123851826,
+ 'System Disk 3': 7.707745388277503,
+ 'User Disk 1': 16.927679716984965,
+ 'User Disk 2': 16.948309000066338,
+ 'User Disk 3': 16.93504174616631,
+ 'User Disk 4': 16.94015543015632,
+ 'User Disk 5': 16.941620748549}
+
+Processing Time: 
+{'Processor': 3.3503996184105085,
+ 'System Disk 1': 0.3003533757964494,
+ 'System Disk 2': 0.2998016156738834,
+ 'System Disk 3': 0.13084115738461333,
+ 'User Disk 1': 0.7337522921483867,
+ 'User Disk 2': 0.7356147299695963,
+ 'User Disk 3': 0.7337045261910745,
+ 'User Disk 4': 0.7343148784748758,
+ 'User Disk 5': 0.7350395522021664}
+
+K = 5, r = 0.99
+Response Time: 0.9690112294209794
+
+Utilization: 
+{'Processor': 0.9895903580422929,
+ 'System Disk 1': 0.2967007249139872,
+ 'System Disk 2': 0.2971857833926881,
+ 'System Disk 3': 0.14845144651113687,
+ 'User Disk 1': 0.544125933925567,
+ 'User Disk 2': 0.5439338723132867,
+ 'User Disk 3': 0.5441340721476013,
+ 'User Disk 4': 0.5444660909617323,
+ 'User Disk 5': 0.5438174651389334}
+
+Throughput: 
+{'Processor': 158.31336728577065,
+ 'System Disk 1': 29.680532918297846,
+ 'System Disk 2': 19.797279397875798,
+ 'System Disk 3': 9.894156059509408,
+ 'User Disk 1': 21.76889945976755,
+ 'User Disk 2': 21.774882927511154,
+ 'User Disk 3': 21.769099654037568,
+ 'User Disk 4': 21.768583237050063,
+ 'User Disk 5': 21.74913115387406}
+
+Processing Time: 
+{'Processor': 98.52809011268197,
+ 'System Disk 1': 0.42222577308746495,
+ 'System Disk 2': 0.4227141378915624,
+ 'System Disk 3': 0.1742241724427192,
+ 'User Disk 1': 1.190934329596103,
+ 'User Disk 2': 1.1930774303031084,
+ 'User Disk 3': 1.192648330890808,
+ 'User Disk 4': 1.193873121082787,
+ 'User Disk 5': 1.1940049680868872}
+
