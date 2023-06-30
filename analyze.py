@@ -13,13 +13,13 @@ def analyze():
 	for number_of_disks in Variables.K.value:
 		odnos_protoka = odredi_protok(number_of_disks)
 		
-		α_max, critical_resource = odredi_granicnu_vrednost(number_of_disks, odnos_protoka)
+		a_max, critical_resource = odredi_granicnu_vrednost(number_of_disks, odnos_protoka)
 		
-		parameters = odredi_parametre_jackson(number_of_disks, odnos_protoka, α_max)
+		parameters = odredi_parametre_jackson(number_of_disks, odnos_protoka, a_max)
 		
 		results[number_of_disks] = {
 			"odnos_protoka": odnos_protoka,
-			"α_max": α_max,
+			"a_max": a_max,
 			"critical_resource": critical_resource,
 			"parameters": parameters
 		}	

@@ -67,7 +67,7 @@ def rezultati_analiticki(results: dict):
 			
 			file.write(f"Odnos protoka: {data['odnos_protoka']}\n")
 			file.write(f"Critical resource: {data['critical_resource']}\n")
-			file.write(f"α: {data['α_max']}\n")
+			file.write(f"a: {data['a_max']}\n")
 			
 			#file.write(f"Parameters: \n {pprint.PrettyPrinter(depth=10).pformat(data['parameters'])}\n")
 			

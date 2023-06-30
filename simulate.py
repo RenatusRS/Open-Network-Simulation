@@ -5,12 +5,12 @@ from generate import generate_jobs, generate_scheme
 from parameters import SimulationParameters, Variables
 
 
-def simulate(α_values):
+def simulate(a_values):
 	print("Simulation started")
 	
-	print(α_values)
+	print(a_values)
 	
-	parameters = [(r, α_values[K - min(Variables.K.value)], K) for r in Variables.r.value for K in Variables.K.value] * SimulationParameters.NumberOfSimulations.value
+	parameters = [(r, a_values[K - min(Variables.K.value)], K) for r in Variables.r.value for K in Variables.K.value] * SimulationParameters.NumberOfSimulations.value
 	
 	cnt = Value('i', len(parameters))
 	
@@ -30,16 +30,16 @@ def init_globals(counter):
     global cnt
     cnt = counter
 
-def simulation(r, α, K, time = SimulationParameters.SimulationTimeSeconds.value):
+def simulation(r, a, K, time = SimulationParameters.SimulationTimeSeconds.value):
 	scheme = generate_scheme(K)
-	jobs = generate_jobs(time, α * r)
+	jobs = generate_jobs(time, a * r)
 	
-	print(f"r = {r}, α = {α}, K = {K} | START")
+	print(f"r = {r}, a = {a}, K = {K} | START")
 	scheme.simulate(jobs)
 	
 	with cnt.get_lock():
 		cnt.value -= 1
         
-		print(f"r = {r}, α = {α}, K = {K} | DONE ({cnt.value} left)")
+		print(f"r = {r}, a = {a}, K = {K} | DONE ({cnt.value} left)")
 	
 	return scheme.get_results(r, K)

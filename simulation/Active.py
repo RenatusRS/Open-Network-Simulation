@@ -51,7 +51,7 @@ class Active(Component):
 		self.processed_count += 1
 		self.previous_proccesing_time = job.current_time
 		
-		job.add_time(added_time)
+		job.current_time += added_time
 		
 		self.cooldown = job.current_time
 		
