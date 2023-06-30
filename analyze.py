@@ -1,6 +1,6 @@
 import copy
 import numpy as np
-from generate import generate_performance_vector, generate_probability_matrix
+from generate import generate_performance_vector, generate_probability_matrix, generate_resource_list
 from parameters import Variables
 
 
@@ -39,12 +39,12 @@ def odredi_protok(number_of_disks: int):
 	
 	probability_matrix = np.linalg.inv(probability_matrix)
 	
-	what = np.zeros(probability_matrix.shape[0])
-	what[0] = 1
+	first_column = np.zeros(probability_matrix.shape[0])
+	first_column[0] = 1
 	
-	what = np.dot(probability_matrix, what)
+	first_column = np.dot(probability_matrix, first_column)
 	
-	return what
+	return first_column
 
 
 def odredi_granicnu_vrednost(number_of_disks: int, odnos_protoka: np.ndarray):
@@ -79,11 +79,14 @@ def odredi_parametre_jackson(number_of_disks: int, odnosi_protoka: np.ndarray, a
 		
 		T_OVERALL = np.sum(odnosi_protoka * T)
 		
+		resources = generate_resource_list()
+		
 		results[r] = {
-			"X": X,
-			"U": U,
-			"J": J,
-			"T": T_OVERALL
+			"X": {resource: X[index] for index, resource in enumerate(resources)},
+			"U": {resource: U[index] for index, resource in enumerate(resources)},
+			"J": {resource: J[index] for index, resource in enumerate(resources)},
+			"T": {resource: T[index] for index, resource in enumerate(resources)},
+			"T_OVERALL": T_OVERALL
 		}
 	
 	return results

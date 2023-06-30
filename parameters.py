@@ -33,5 +33,5 @@ class Variables(Enum):
 		
 class SimulationParameters(Enum):
 	SimulationTimeSeconds = 30 * 60 # 30 minutes
-	NumberOfSimulations = 3
+	NumberOfSimulations = 100
 	

@@ -3,6 +3,7 @@ import pprint
 import numpy as np
 
 from parameters import Variables
+from util import average_results
 
 np.set_printoptions(threshold=np.inf)
 np.set_printoptions(linewidth=np.inf)
@@ -43,15 +44,11 @@ def protoci_analiticki(results: dict):
 	print("Generated protoci_analiticki.txt")
 		
 		
-strings = ["Processor", "System Disk 1", "System Disk 2", "System Disk 3", "User Disk 1", "User Disk 2", "User Disk 3", "User Disk 4", "User Disk 5"]
-		
+	
 def convert_numpy_to_list(data):
 	if isinstance(data, np.ndarray):
-		data = data.tolist()
-		
-		data = [f"{string}: {value}" for string, value in zip(strings, data)]
 	
-		return data
+		return data.tolist()
 	elif isinstance(data, dict):
 		return {key: convert_numpy_to_list(value) for key, value in data.items()}
 	else:
@@ -97,31 +94,10 @@ def rezultati_simulacija(results: list):
 		
 	print("Generated rezultati_simulacija.txt")
 	
-def averaged_dictionary(list_of_dicts):
-	averaged_dict = dict()
-	
-	for key in list_of_dicts[0]:
-		if isinstance(list_of_dicts[0][key], dict):
-			averaged_dict[key] = averaged_dictionary([dict_[key] for dict_ in list_of_dicts])
-		elif isinstance(list_of_dicts[0][key], list):
-			averaged_dict[key] = np.mean([dict_[key] for dict_ in list_of_dicts], axis=0)
-		else:
-			averaged_dict[key] = np.mean([dict_[key] for dict_ in list_of_dicts])
-			
-	return averaged_dict
+
 		
 def rezultati_simulacija_usrednjeno(results: list):
-	results = {
-		K : {
-			r : [result for result in results if result["K"] == K and result["r"] == r] for r in Variables.r.value
-		} for K in Variables.K.value
-	}
-	
-	results = {
-		K : {
-			r : averaged_dictionary(results[K][r]) for r in Variables.r.value
-		} for K in Variables.K.value
-	}
+	results = average_results(results)
 	
 	with open("results/rezultati_simulacija_usrednjeno.txt", "w") as file:
 		for K in Variables.K.value:

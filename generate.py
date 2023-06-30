@@ -111,3 +111,6 @@ def generate_performance_vector(number_of_disks):
 		)
 	
 	return performance_vector
+
+def generate_resource_list():
+	return ["Processor", "System Disk 1", "System Disk 2", "System Disk 3", "User Disk"]
