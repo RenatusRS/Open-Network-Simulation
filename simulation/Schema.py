@@ -42,7 +42,7 @@ class Schema:
 		total_runtime = max([job.current_time for job in self.jobs])
 	
 		utilization = { resource.name: resource.processed_time / total_runtime for resource in resources }
-		througput = { resource.name: resource.processed_count / total_runtime * 1000 for resource in resources }
+		througput = { resource.name: resource.processed_count / total_runtime for resource in resources }
 		average_jobs_in_queue = { resource.name: resource.average_jobs_in_queue / total_runtime for resource in resources }
 	
 		response_time = np.mean([job.current_time - job.start_time for job in self.jobs])
