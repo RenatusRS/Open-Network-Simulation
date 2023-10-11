@@ -1,5 +1,5 @@
-from collections import deque
 import random
+from collections import deque
 from typing import Deque
 
 from simulation.Component import Component
@@ -30,7 +30,6 @@ class Spreader(Component):
 		
 	def add(self, job: Job):
 		self.queue.append(job)
-		
 		
 	def process(self, job: Job):
 		target: Component = random.choices(

@@ -1,5 +1,5 @@
-from typing import List
 import numpy as np
+from typing import List
 
 from simulation.Server import Server
 from simulation.Job import Job

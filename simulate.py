@@ -28,6 +28,7 @@ def init_globals(counter):
     global cnt
     cnt = counter
 
+
 def simulation(r, a, K, time = SimulationParameters.SimulationTimeSeconds.value):
 	schema = generate_schema(K)
 	jobs = generate_jobs(time, a * r)

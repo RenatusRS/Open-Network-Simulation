@@ -1,7 +1,6 @@
+import numpy as np
 from collections import deque
 from typing import Deque
-
-import numpy as np
 
 from simulation.Component import Component
 from simulation.Job import Job
