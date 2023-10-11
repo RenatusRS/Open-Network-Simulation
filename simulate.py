@@ -1,7 +1,7 @@
 from multiprocessing import Pool, Value
 import time
 
-from generate import generate_jobs, generate_scheme
+from generate import generate_jobs, generate_schema
 from parameters import SimulationParameters, Variables
 
 
@@ -29,15 +29,15 @@ def init_globals(counter):
     cnt = counter
 
 def simulation(r, a, K, time = SimulationParameters.SimulationTimeSeconds.value):
-	scheme = generate_scheme(K)
+	schema = generate_schema(K)
 	jobs = generate_jobs(time, a * r)
 	
 	print(f"r = {r}, a = {a}, K = {K} | START")
-	scheme.simulate(jobs)
+	schema.simulate(jobs)
 	
 	with cnt.get_lock():
 		cnt.value -= 1
         
 		print(f"r = {r}, a = {a}, K = {K} | DONE ({cnt.value} left)")
 	
-	return scheme.get_results(r, K)
+	return schema.get_results(r, K)

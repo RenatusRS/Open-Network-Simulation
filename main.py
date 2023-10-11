@@ -27,6 +27,3 @@ if __name__ == '__main__':
 	rezultati_simulacija_usrednjeno(simulate_results)
 	
 	tabela_analitika_simulacija(analyze_results, simulate_results)
-	
-
-	

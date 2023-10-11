@@ -10,13 +10,11 @@ class Spreader(Component):
 		job = self.queue.popleft()
 		self.process(job)
 		
-		
 	def get_next_event_time(self):
 		if not self.queue:
 			return float("inf")
 		
 		return self.queue[0].current_time
-	
 	
 	def __init__(self, name: str):
 		super().__init__(name)
@@ -26,11 +24,9 @@ class Spreader(Component):
 		
 		self.queue: Deque[Job] = deque()
 
-		
 	def addTarget(self, target: Component, weight: int):
 		self._targets.append(target)
 		self._weights.append(weight)
-		
 		
 	def add(self, job: Job):
 		self.queue.append(job)

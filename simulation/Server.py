@@ -1,5 +1,4 @@
 from collections import deque
-from queue import PriorityQueue
 from typing import Deque
 
 import numpy as np
@@ -8,8 +7,7 @@ from simulation.Component import Component
 from simulation.Job import Job
 
 
-class Active(Component):
-	
+class Server(Component):
 	def tick(self):
 		job = self.queue.popleft()
 		
@@ -48,7 +46,7 @@ class Active(Component):
 	def add(self, job: Job):
 		self.queue.append(job)
 		
-		
+
 	def process(self, job: Job):
 		added_time = np.random.exponential(scale=self._service_time) if self._service_time != 0 else 0
 		

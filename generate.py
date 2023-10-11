@@ -1,12 +1,12 @@
 import numpy as np
 from parameters import DiscProbabiltiy, ProcessingSpeed, ProcessorProbability
-from simulation.Active import Active
+from simulation.Server import Server
 from simulation.Job import Job
 from simulation.Schema import Schema
 from simulation.Spreader import Spreader
 
 
-def generate_jobs(total_time, throughput):
+def generate_jobs(total_time, throughput) -> list[Job]:
 	job_num = np.random.poisson(throughput * total_time)
 	event_times = np.cumsum(np.random.exponential(1 / throughput, job_num))
 		
@@ -15,14 +15,14 @@ def generate_jobs(total_time, throughput):
 	return jobs
 
 
-def generate_scheme(number_of_disks) -> Schema:
-	processor     = Active("Processor", ProcessingSpeed.Processor.value)
+def generate_schema(number_of_disks) -> Schema:
+	processor     = Server("Processor", ProcessingSpeed.Processor.value)
 	
-	system_disk_1 = Active("System Disk 1", ProcessingSpeed.SystemDisk1.value)
-	system_disk_2 = Active("System Disk 2", ProcessingSpeed.SystemDisk2.value)
-	system_disk_3 = Active("System Disk 3", ProcessingSpeed.SystemDisk3.value)
+	system_disk_1 = Server("System Disk 1", ProcessingSpeed.SystemDisk1.value)
+	system_disk_2 = Server("System Disk 2", ProcessingSpeed.SystemDisk2.value)
+	system_disk_3 = Server("System Disk 3", ProcessingSpeed.SystemDisk3.value)
 	
-	user_disks   = [Active(f"User Disk {index + 1}", ProcessingSpeed.UserDisk.value) for index in range(number_of_disks)]
+	user_disks   = [Server(f"User Disk {index + 1}", ProcessingSpeed.UserDisk.value) for index in range(number_of_disks)]
 	
 	user_disks_spreader = Spreader("User Disk Spreader")
 	
@@ -60,28 +60,28 @@ def generate_scheme(number_of_disks) -> Schema:
 	
 	system_disk_3.setTarget(system_disk_3_spreader)
 	
-	scheme = Schema()
+	schema = Schema()
 	
-	scheme.add(processor)
-	scheme.add(system_disk_1)
-	scheme.add(system_disk_2)
-	scheme.add(system_disk_3)
-	scheme.add(user_disks_spreader)
-	scheme.add(processor_spreader)
-	scheme.add(system_disk_spreader)
-	scheme.add(system_disk_1_spreader)
-	scheme.add(system_disk_2_spreader)
-	scheme.add(system_disk_3_spreader)
+	schema.add(processor)
+	schema.add(system_disk_1)
+	schema.add(system_disk_2)
+	schema.add(system_disk_3)
+	schema.add(user_disks_spreader)
+	schema.add(processor_spreader)
+	schema.add(system_disk_spreader)
+	schema.add(system_disk_1_spreader)
+	schema.add(system_disk_2_spreader)
+	schema.add(system_disk_3_spreader)
 	
 	for user_disk in user_disks:
-		scheme.add(user_disk)
+		schema.add(user_disk)
 		
-	scheme.set_entry_point(processor)
+	schema.set_entry_point(processor)
 	
-	return scheme
+	return schema
 
 
-def generate_probability_matrix(number_of_disks):
+def generate_probability_matrix(number_of_disks) -> np.ndarray:
 	probability_matrix = np.array([
 		[ProcessorProbability.Processor.value, ProcessorProbability.SystemDisk1.value, ProcessorProbability.SystemDisk2.value, ProcessorProbability.SystemDisk3.value],
 		[DiscProbabiltiy.Processor.value     , DiscProbabiltiy.Self.value            , 0                                     , 0                                     ],
@@ -100,7 +100,7 @@ def generate_probability_matrix(number_of_disks):
 	return probability_matrix
 	
 
-def generate_performance_vector(number_of_disks):
+def generate_performance_vector(number_of_disks) -> np.ndarray:
 	performance_vector = np.array(
 			[
 				ProcessingSpeed.Processor.value,
@@ -112,5 +112,6 @@ def generate_performance_vector(number_of_disks):
 	
 	return performance_vector
 
-def generate_resource_list():
+
+def generate_resource_list() -> list[str]:
 	return ["Processor", "System Disk 1", "System Disk 2", "System Disk 3", "User Disk"]

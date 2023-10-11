@@ -5,8 +5,9 @@ import numpy as np
 from parameters import Variables
 from util import average_results
 
-np.set_printoptions(threshold=np.inf)
-np.set_printoptions(linewidth=np.inf)
+
+np.set_printoptions(threshold=np.inf, linewidth=np.inf)
+
 
 def protoci_analiticki(results: dict):
 	columns = [
@@ -44,15 +45,15 @@ def protoci_analiticki(results: dict):
 	print("Generated protoci_analiticki.txt")
 		
 		
-	
 def convert_numpy_to_list(data):
 	if isinstance(data, np.ndarray):
-	
 		return data.tolist()
-	elif isinstance(data, dict):
+	
+	if isinstance(data, dict):
 		return {key: convert_numpy_to_list(value) for key, value in data.items()}
-	else:
-		return data
+
+	return data
+
 		
 def rezultati_analiticki(results: dict):
 	with open("results/rezultati_analiticki.txt", "w") as file:
@@ -90,12 +91,10 @@ def rezultati_simulacija(results: list):
 			pprint.pprint(result['processing_time'], stream=file)
 			
 			file.write("\n")
-			
-		
+				
 	print("Generated rezultati_simulacija.txt")
 	
-
-		
+	
 def rezultati_simulacija_usrednjeno(results: list):
 	results = average_results(results)
 	
@@ -118,4 +117,3 @@ def rezultati_simulacija_usrednjeno(results: list):
 				file.write("\n")
 
 	print("Generated rezultati_simulacija_usrednjeno.txt")
-	

@@ -9,7 +9,6 @@ class ProcessingSpeed(Enum):
     
     UserDisk    = 0.025
     
-	
 class ProcessorProbability(Enum):
 	SystemDisk1 = 0.15
 	SystemDisk2 = 0.10
@@ -17,21 +16,18 @@ class ProcessorProbability(Enum):
         
 	UserDisk    = 0.50
         
-	Processor   = 0.20
-        
+	Processor   = 0.20     
 		
 class DiscProbabiltiy(Enum):
     Processor = 0.30
     Self = 0.20
     UserDisk = 0.50
     
-
 class Variables(Enum):
 	r = [0.25, 0.50, 0.77, 0.99] # arrival rate modification
 	K = range(2, 6) # number of user disks
-        
-		
+        	
 class SimulationParameters(Enum):
-	SimulationTimeSeconds = 30 * 60 # 30 minutes
-	NumberOfSimulations = 100
+	SimulationTimeSeconds = 1 * 60 # 30 minutes
+	NumberOfSimulations = 10
 	

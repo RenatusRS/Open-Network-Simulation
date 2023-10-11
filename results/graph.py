@@ -18,7 +18,6 @@ def grafik_zavisnosti_a_max_K(results: dict):
 	plt.savefig("results/graphs/zavisnost_a_max_K.png")
 
 
-
 def grafik_iskoriscenja(results: dict):
 	figure, plots = plt.subplots(4, 1, figsize=(6, 15))
 	
@@ -43,6 +42,7 @@ def grafik_iskoriscenja(results: dict):
 	figure.legend([f"{server}" for server in servers])
 	figure.savefig("results/graphs/iskoriscenje.png")
 
+
 def grafik_vremena_odziva(results: dict):
 	figure, plots = plt.subplots(4, 1, figsize=(6, 15))
 	
@@ -65,6 +65,7 @@ def grafik_vremena_odziva(results: dict):
 	figure.suptitle("Vreme odziva")
 	figure.legend([f"{server}" for server in servers])
 	figure.savefig("results/graphs/vreme_odziva.png")
+
 
 def grafik_vremena_odziva_sistema(results):
 	figure, plots = plt.subplots(4, 1, figsize=(6, 15))

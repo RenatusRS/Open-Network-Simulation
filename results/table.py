@@ -5,20 +5,24 @@ from openpyxl.utils import get_column_letter
 from parameters import SimulationParameters, Variables
 from util import average_results
 
+
 def tabela_analitika_simulacija(analyze_results, simulate_results):
-	workbook = generate_template_table()
-	
-	data = pack_data(analyze_results, simulate_results)
-	
-	fill_table(workbook["Analitika"], data[0])
-	fill_table(workbook["Simulacija x1"], data[1])
-	fill_table(workbook["Odstupanja x1"], data[2])
-	fill_table(workbook[f"Simulacija x{SimulationParameters.NumberOfSimulations.value}"], data[3])
-	fill_table(workbook[f"Odstupanja x{SimulationParameters.NumberOfSimulations.value}"], data[4])
-	
-	workbook.save("results/odstupanja.xlsx")
-	
-	
+    workbook = generate_template_table()
+    data = pack_data(analyze_results, simulate_results)
+    sheets = [
+        "Analitika",
+        "Simulacija x1",
+        "Odstupanja x1",
+        f"Simulacija x{SimulationParameters.NumberOfSimulations.value}",
+        f"Odstupanja x{SimulationParameters.NumberOfSimulations.value}"
+    ]
+    
+    for sheet, d in zip(sheets, data):
+        fill_table(workbook[sheet], d)
+    
+    workbook.save("results/odstupanja.xlsx")
+
+
 def generate_template_table():
 	workbook = Workbook()
 
@@ -36,6 +40,7 @@ def generate_template_table():
 		"Xp", "Xs1", "Xs2", "Xs3", "Xk1", "Xk2", "Xk3", "Xk4", "Xk5",
 		"T"
 	]
+	
 	for col_num, header in enumerate(headers_row, start=1):
 		column_letter = get_column_letter(col_num)
 		base_template[f"{column_letter}1"] = header
@@ -60,6 +65,7 @@ def generate_template_table():
 		f"Simulacija x{SimulationParameters.NumberOfSimulations.value}",
 		f"Odstupanja x{SimulationParameters.NumberOfSimulations.value}"
 	]
+	
 	for page_name in page_names:
 		worksheet = workbook.copy_worksheet(base_template)
 		worksheet.title = page_name
@@ -69,6 +75,7 @@ def generate_template_table():
 	
 	return workbook
 
+
 def fill_table(worksheet, data: list):
 	light_gray = PatternFill(start_color="b7b7b7", end_color="b7b7b7", fill_type="solid")
 	
@@ -77,7 +84,8 @@ def fill_table(worksheet, data: list):
 			column_letter = get_column_letter(col_num)
 			worksheet[f"{column_letter}{row_num}"] = cell
 			worksheet[f"{column_letter}{row_num}"].fill = light_gray
-			
+		
+		
 def pack_data(analyze_results, simulate_results):
 	ar = {
 		K: {
