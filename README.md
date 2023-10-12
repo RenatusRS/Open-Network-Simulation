@@ -2,33 +2,77 @@
 
 > Project for **Computer Systems Performance** / **Performanse Računarskih Sistema** class.
 
-## Introduction
+Python-based application that performs analytical calculations on the specified parameters.
 
-This project, implemented in Python, models a multiprogramming computer system via an open network operating in a steady-state regime. The simulated system consists of a processor, three system disks, and 𝐾 user disks, with jobs arriving at the processor following a Poisson process with intensity 𝛼. The system operates on exponential processing and service times with respective averages of 𝑆𝑝 = 6.25𝑚𝑠 for the processor, 𝑆𝑑1 = 10𝑚𝑠 for the first system disk, 𝑆𝑑2 = 𝑆𝑑3 = 15𝑚𝑠 for the second and third system disks, and 𝑆𝑑𝑘 = 25𝑚𝑠 for user disks.
+Following the analytical calculations, it simulates an open network system, generating jobs that enter the system in accordance with a Poisson distribution. The user-configurable schema determines how these jobs are transferred between the system's components.
 
-The project facilitates the analytical evaluation and simulation of the system, determining the utilization of resources, flows through resources, average number of jobs at each resource, and the system's response time with a central server for varying numbers of user disks (𝐾) and input flow intensities (𝑟 ⋅ 𝛼𝑚𝑎𝑥, 𝑟 ∈ {0.25,0.50,0.77, 0.99}). It identifies the critical resource in the system and provides a detailed comparison between the analytical and simulated results.
+Finally, the findings are presented in Excel tables, text, and visual graphs.
 
 ## Features
-
-- **Analytical Evaluation:** The project offers a robust analytical evaluation method to determine the flows through servers based on the defined system input parameters. It calculates the limiting values of input flow intensity for which the system remains in a steady state and identifies the critical resource in the system for each value of 𝐾 and 𝑟.
+- **Analytical Solution**: Uses input parameters to compute server flows and identifies the bottleneck system resource. Applies Jackson's theorem in calculation for other parameters. Provides expected values for the given system.
   
-- **Simulation:** A comprehensive simulation functionality is provided to emulate the system's operation. It generates and averages the results of 100 simulations for each combination of parameters 𝑟 and 𝐾, thereby offering a detailed insight into the system's behavior under different conditions.
+- **Simulation**: Examines system behavior, showing dynamics for different configurations and job intensities. Provides simulated values for the given system.
 
-- **Documentation and Analysis:** An in-depth analysis and documentation of the simulation method, analytical problem solving, and comparative analysis of the results obtained are encapsulated in this project. It provides tabular reports of relative deviations and constructs various diagrams depicting different dependencies and critical resources, enhancing the understanding of the system's performance.
+- **Analysis & Documentation**: Compares results from the analytical method with simulation outcomes and averages from several runs. The data is presented visually for clarity.
 
 ## Configuration
+### parameters.py
+This file hosts the adjustable parameters for the simulation.
 
-**Parameters Configuration:** The `parameters.py` file contains configurable parameters essential for the simulation such as processing speeds, probabilities, and simulation parameters.
+#### Default Values
 
-**System Schema Generation:** The `generate.py` file houses the function `generate_schema(number_of_disks)` crucial for generating a schema of the system, which can be modified to alter the system's schema.
+**Processing Speed**
+| Parameter                        | Default Value |
+|----------------------------------|---------------|
+| Processor                        | 6.25ms        |
+| System Disk 1                    | 10ms          |
+| System Disk 2                    | 15ms          |
+| System Disk 3                    | 15ms          |
+| User Disk                        | 25ms          |
+
+**Processor Transfer Probability**
+| Parameter                        | Default Value |
+|----------------------------------|---------------|
+| System Disk 1                    | 15%           |
+| System Disk 2                    | 10%           |
+| System Disk 3                    | 5%            |
+| User Disk                        | 50%           |
+| Processor                        | 20%           |
+
+**System Disk Transfer Probability**
+| Parameter                        | Default Value |
+|----------------------------------|---------------|
+| Processor                        | 30%           |
+| Self                             | 20%           |
+| User Disk                        | 50%           |
+
+**Variables**
+| Parameter                                    | Default Value            |
+|----------------------------------------------|--------------------------|
+| r (job arrival rate modification)            | [0.25, 0.50, 0.77, 0.99] |
+| K (num. of user disks)                       | [2, 3, 4, 5]             |
+
+**Simulation Parameters**
+| Parameter                        | Default Value   |
+|----------------------------------|-----------------|
+| Simulation Time                  | 30 minutes      |
+| Number of Simulations            | 100             |
+
+> **Note:** The specified simulation time pertains to simulated durations, not the real-time operation of the program.
+
+### generate.py
+This file contains the `generate_schema(number_of_disks)` function that molds the system's schema. For those looking to modify the system's architecture, tweaking this function will be essential. To grasp the role and functionality of each class, please delve into the "simulation" folder.
+
+#### Default Schema
+![Placeholder Image for Default Schema](path_to_image.png)
 
 ## How-To Run
+1. Ensure you have the required dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
 
-Install the required dependencies with:
-```bash
-pip install -r requirements.txt
-```
-Execute the program by running:
-```bash
-python main.py
-```
+2. Execute the program by running `main.py`:
+   ```
+   python main.py
+   ```
