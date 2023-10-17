@@ -64,7 +64,7 @@ This file hosts the adjustable parameters for the simulation.
 This file contains the `generate_schema(number_of_disks)` function that molds the system's schema. For those looking to modify the system's architecture, tweaking this function will be essential. To grasp the role and functionality of each class, please delve into the "simulation" folder.
 
 #### Default Schema
-![Placeholder Image for Default Schema](path_to_image.png)
+![image](https://github.com/RenatusRS/Open-Network-Simulation/assets/19864929/597c1e93-71b4-4fe7-b3d0-f18006c35847)
 
 ## How-To Run
 1. Ensure you have the required dependencies:
