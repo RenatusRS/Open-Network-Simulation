@@ -8,6 +8,8 @@ Following the analytical calculations, it simulates an open network system, gene
 
 Finally, the findings are presented in Excel tables, text, and visual graphs.
 
+The `results/output` folder contains an example output for the default parameters.
+
 ## Features
 - **Analytical Solution**: Uses input parameters to compute server flows and identifies the bottleneck system resource. Applies Jackson's theorem in calculation for other parameters. Provides expected values for the given system.
   
@@ -21,7 +23,7 @@ This file hosts the adjustable parameters for the simulation.
 
 #### Default Values
 
-**Processing Speed**
+_**Processing Speed**_
 | Parameter                        | Default Value |
 |----------------------------------|---------------|
 | Processor                        | 6.25ms        |
@@ -30,7 +32,7 @@ This file hosts the adjustable parameters for the simulation.
 | System Disk 3                    | 15ms          |
 | User Disk                        | 25ms          |
 
-**Processor Transfer Probability**
+_**Processor Transfer Probability**_
 | Parameter                        | Default Value |
 |----------------------------------|---------------|
 | System Disk 1                    | 15%           |
@@ -39,24 +41,24 @@ This file hosts the adjustable parameters for the simulation.
 | User Disk                        | 50%           |
 | Processor                        | 20%           |
 
-**System Disk Transfer Probability**
+_**System Disk Transfer Probability**_
 | Parameter                        | Default Value |
 |----------------------------------|---------------|
 | Processor                        | 30%           |
 | Self                             | 20%           |
 | User Disk                        | 50%           |
 
-**Variables**
+_**Variables**_
 | Parameter                                    | Default Value            |
 |----------------------------------------------|--------------------------|
 | r (job arrival rate modification)            | [0.25, 0.50, 0.77, 0.99] |
 | K (num. of user disks)                       | [2, 3, 4, 5]             |
 
-**Simulation Parameters**
+_**Simulation Parameters**_
 | Parameter                        | Default Value   |
 |----------------------------------|-----------------|
 | Simulation Time                  | 30 minutes      |
-| Number of Simulations            | 100             |
+| Number of Simulations            | 10              |
 
 > **Note:** The specified simulation time pertains to simulated durations, not the real-time operation of the program.
 
