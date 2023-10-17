@@ -28,6 +28,6 @@ class Variables(Enum):
 	K = range(2, 6) # number of user disks
         	
 class SimulationParameters(Enum):
-	SimulationTimeSeconds = 1 * 60 # 30 minutes
+	SimulationTimeSeconds = 30 * 60 # 30 minutes
 	NumberOfSimulations = 10
 	
