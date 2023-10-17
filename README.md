@@ -63,7 +63,7 @@ _**Simulation Parameters**_
 > **Note:** The specified simulation time pertains to simulated durations, not the real-time operation of the program.
 
 ### generate.py
-This file contains the `generate_schema(number_of_disks)` function that molds the system's schema. For those looking to modify the system's architecture, tweaking this function will be essential. To grasp the role and functionality of each class, please delve into the "simulation" folder.
+This file contains the `generate_schema(number_of_disks)` function that molds the system's schema. If you want to use your own schema you should modify this function. Schema simulation uses components from the `simulation` folder.
 
 #### Default Schema
 ![image](https://github.com/RenatusRS/Open-Network-Simulation/assets/19864929/597c1e93-71b4-4fe7-b3d0-f18006c35847)
